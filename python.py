@@ -11,8 +11,8 @@ def classify_student(avg_score):
 def calculate_info(student):
     avg_score = round(
         (student["math_score"] +
-         student["physics_score"] +
-         student["chemistry_score"]) / 3, 2
+        student["physics_score"] +
+        student["chemistry_score"]) / 3, 2
     )
     student["avg_score"] = avg_score
     student["rank"] = classify_student(avg_score)
