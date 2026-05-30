@@ -73,15 +73,9 @@ def update_student():
     student_id = input("Nhập mã sinh viên cần cập nhật: ")
     for student in students:
         if student["id"] == student_id:
-            student["math_score"] = float(
-                input("Nhập điểm Toán mới: ")
-            )
-            student["physics_score"] = float(
-                input("Nhập điểm Lý mới: ")
-            )
-            student["chemistry_score"] = float(
-                input("Nhập điểm Hóa mới: ")
-            )
+            student["math_score"] = float(input("Nhập điểm Toán mới: "))
+            student["physics_score"] = float(input("Nhập điểm Lý mới: "))
+            student["chemistry_score"] = float(input("Nhập điểm Hóa mới: "))
             calculate_info(student)
             print("Cập nhật thành công!")
             return
@@ -90,9 +84,7 @@ def delete_student():
     student_id = input("Nhập mã sinh viên cần xóa: ")
     for student in students:
         if student["id"] == student_id:
-            confirm = input(
-                "Bạn có chắc muốn xóa? (y/n): "
-            )
+            confirm = input("Bạn có chắc muốn xóa? (y/n): ")
             if confirm.lower() == "y":
                 students.remove(student)
                 print("Xóa thành công!")
@@ -104,9 +96,7 @@ def search_student():
     keyword = input(
         "Nhập mã sinh viên hoặc tên cần tìm: "
     ).lower()
-
     found = False
-
     for student in students:
         if (
             keyword in student["id"].lower()
@@ -114,7 +104,6 @@ def search_student():
         ):
             print(student)
             found = True
-
     if not found:
         print("Không tìm thấy sinh viên!")
 def sort_students():
